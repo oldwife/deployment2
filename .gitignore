@@ -1,0 +1,5 @@
+bin/.env.ps1
+sources/Agent_Install.msi
+sources/Agent_Install.mst
+sources/Configuration.xml
+sources/setup.exe
