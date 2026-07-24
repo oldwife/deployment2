@@ -7,7 +7,7 @@ Automated deployment scripts and provisioning without imaging for Windows system
 ## Getting Started
 
 1. Copy the deployment2 repository to the root of a Windows partitioned drive (e.g. D:\)
-2. Copy examples/example.env.ps1 to bin/.env.ps1 with your credentials
+2. Copy examples/example.env.ps1 to bin/.env.ps1 updated with your credentials.
 3. Plug drive into a new windows workstation running Windows 11 at OOBE.
     - If not automattically detected hit the windows key 5 times and select "Install Provising Package" from the menu that follows
 

@@ -7,9 +7,10 @@ Write-Host "Running script: $($MyInvocation.MyCommand.Name) on $(Get-Date)"
 Rename-LocalUser -Name "admin" -NewName "$DefaultUsername"
 Set-LocalUser -Name "$DefaultUsername" -Password (ConvertTo-SecureString $DefaultPassword -AsPlainText -Force)
 
-#Change-Hostname
-#Uninstall-McAfee
-#Install-Applications
-#Deploy-Bitlocker
+Change-Hostname
+Uninstall-McAfee
+Install-Applications
+Deploy-Bitlocker
+Read-Host "Stage 1 complete"
 Set-AutoLogon -NextScript "Deployment-Stage2.ps1"
-#Restart-Computer
+Restart-Computer

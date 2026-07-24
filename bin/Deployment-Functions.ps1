@@ -24,7 +24,7 @@ function Uninstall-McAfee {
 .NOTES
 	Author: et
 #>
-	Write-Output "Starting Native McAfee Removal..."
+	Write-Output "Searching for John McAfee in the Logs..."
 	
 	# Find all uninstall strings in the registry
 	$UninstallPaths = @(
@@ -93,7 +93,7 @@ function Install-Applications {
 	#install office using ODT
 	Write-Host "Installing Office"
 	#write a catch for 32bit office installation and logging
-	C:\IT\source\SETUP.EXE /configure C:\IT\source\CONFIGURATION.XML
+	C:\IT\sources\SETUP.EXE /configure C:\IT\sources\CONFIGURATION.XML
 }
 
 function Deploy-Bitlocker {
@@ -108,7 +108,7 @@ function Deploy-Bitlocker {
 
 function Deploy-Automate {
 	Write-Host "Deploying automate"
-	msiexec /i "C:\IT\source\Agent_Install.msi" /quiet TRANSFORMS="C:\IT\source\Agent_Install.mst"
+	msiexec /i "C:\IT\sources\Agent_Install.msi" /quiet TRANSFORMS="C:\IT\sources\Agent_Install.mst"
 }
 
 function Deploy-VPN {
@@ -144,5 +144,5 @@ function Set-AutoLogon {
 
 	#Set next script to run on next logon
 	Write-Host "Setting $NextScript to start on next logon"
-	Set-ItemProperty 'HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce' -Name 'InstallAgent' -Value "PowerShell.exe -ExecutionPolicy Bypass -File `"C:\IT\$NextScript`""
+	Set-ItemProperty 'HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce' -Name 'InstallAgent' -Value "PowerShell.exe -WindowStyle Maximized -NoLogo -NoExit -ExecutionPolicy Bypass -File `"C:\IT\$NextScript`""
 }
